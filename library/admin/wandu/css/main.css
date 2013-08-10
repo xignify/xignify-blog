@@ -1,0 +1,31 @@
+/*940*/
+
+section {margin-top:60px;}
+
+div.kongs {width:960px;margin-left:-10px;margin-right:-10px;}
+div.kongs:after {display:table;content:"";clear:both;}
+
+div.kongs > div.kong {float:left;margin:20px;width:120px;text-align:center;}
+div.kongs > div.kong > a > img {width:100px;height:100px;}
+div.kongs > div.kong > figcaption {margin-top:10px;color:#808080;}
+
+
+@media (min-width: 1200px) {
+	/*1170*/
+	div.kongs {width:1176px;margin-left:-3px;margin-right:-3px;}
+	div.kongs > div.kong {width:128px;}
+}
+@media (max-width: 979px) and (min-width: 768px) {
+	/*724*/
+	section {margin-top:0;}
+	div.kongs {width:730px;margin-left:-3px;margin-right:-3px;}
+	div.kongs > div.kong {margin:15px;width:116px;}
+}
+@media (max-width: 767px) {
+	/*auto*/
+	section {margin-top:0;}
+	div.kongs {width:auto;}
+	div.kongs > div.kong {margin:10px;width:100px;}
+}
+
+h2 > a:hover {text-decoration:none;}

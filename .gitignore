@@ -1,0 +1,10 @@
+.DS_Store
+composer.lock
+CHECKLIST
+/vendor
+/components
+/.htaccess
+/config
+/Kongs
+/files
+

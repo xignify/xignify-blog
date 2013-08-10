@@ -1,0 +1,9 @@
+body {background:#f1f1f1}
+
+#container {position:absolute;top:0;left:50%;margin-left:-106px;width:200px;}
+#container form {width:200px;}
+#container .alert {display:none}
+#container .title {font-size:11px;color:#777;margin-bottom:8px;}
+#container .title strong{text-align:left;font-size:17px;font-family:arial;color:#fb9e25;}
+
+input.placeholder {color:#aaa}

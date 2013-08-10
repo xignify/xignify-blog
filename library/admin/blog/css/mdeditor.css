@@ -1,0 +1,57 @@
+.mdeditor > .mdeditor-tools {
+	padding:4px;width:929px;
+	border-top-right-radius:4px;border-top-left-radius:4px;
+	border:1px solid #ccc;background:#f1f1f1;
+}
+.mdeditor > .mdeditor-area {width:940px;margin-top:-1px;}
+.mdeditor > .mdeditor-area:after {clear:both;display:table;content:"";}
+.mdeditor > .mdeditor-area > .mdeditor-textarea {
+	float:left;resize:none;
+	width:456px;min-height:400px;
+	border-radius:0;
+}
+.mdeditor > .mdeditor-area > .mdeditor-preview {
+	float:left;
+	margin-left:-1px;padding:4px 6px;border:1px solid #ccc;
+	width:456px;min-height:400px;height:400px;overflow:scroll;
+	border-radius:0;
+}
+.mdeditor-files-list > a {display:block;}
+
+@media (min-width: 1200px) {
+	/*1170*/
+	.mdeditor > .mdeditor-tools {width:1159px;}
+	.mdeditor > .mdeditor-area {width:1170px;}
+	.mdeditor > .mdeditor-area > .mdeditor-textarea {
+		width:571px;
+	}
+	.mdeditor > .mdeditor-area > .mdeditor-preview {
+		width:571px;
+	}
+
+}
+@media (max-width: 979px) and (min-width: 768px) {
+	/*724*/
+	.mdeditor > .mdeditor-tools {width:713px;}
+	.mdeditor > .mdeditor-area {width:724px;}
+	.mdeditor > .mdeditor-area > .mdeditor-textarea {
+		width:348px;
+	}
+	.mdeditor > .mdeditor-area > .mdeditor-preview {
+		width:348px;
+	}
+}
+@media (max-width: 767px) {
+	/*auto*/
+	.mdeditor > .mdeditor-tools {width:100%;box-sizing:border-box;}
+	.mdeditor > .mdeditor-area {width:100%;}
+	.mdeditor > .mdeditor-area > .mdeditor-textarea {
+		float:none;
+		width:100%;box-sizing:border-box;
+	}
+	.mdeditor > .mdeditor-area > .mdeditor-preview {
+		float:none;
+		width:100%;box-sizing:border-box;margin-top:-1px;margin-left:0;
+	}
+}
+

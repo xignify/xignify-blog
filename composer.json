@@ -1,0 +1,22 @@
+{
+    "require": {
+        "php" : ">=5.3.2",
+        "components/jquery" : "1.10.*",
+        "components/bootstrap" : "2.3.*",
+        "components/font-awesome" : "3.2.*",
+        "components/modernizr" : "2.6.*",
+        "dflydev/markdown" : "1.0.*",
+        "sybio/image-workshop" : "2.0.*"
+	},
+	"require-dev" : {
+		"phpunit/phpunit" : "3.7.*"
+	},
+	"autoload" : {
+		"psr-0" : {
+			"Xignify\\" : "src/"
+		},
+		"files" : [
+			"src/functions.php"
+		]
+	}
+}

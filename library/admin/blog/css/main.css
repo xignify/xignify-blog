@@ -1,0 +1,22 @@
+/*940*/
+
+section {margin-top:60px;}
+h2 > a:hover {text-decoration:none;}
+
+.thumbnail-preview {width:200px;height:200px;padding:3px;border:1px solid #ccc;border-radius:4px;margin-bottom:5px;}
+.thumbnail-preview > img {max-width:200px;max-height:200px;}
+
+@media (min-width: 1200px) {
+	/*1170*/
+}
+@media (max-width: 979px) and (min-width: 768px) {
+	/*724*/
+	section {margin-top:0;}
+}
+@media (max-width: 767px) {
+	/*auto*/
+	section {margin-top:0;}
+}
+
+
+

@@ -1,0 +1,4 @@
+html,body {height:100%;}
+body {background:#080d2a url("../images/cloud.png") no-repeat center bottom;background-size:100%;}
+
+h1 {font-size:17px;color:#eee;line-height:23px;}

@@ -1,0 +1,59 @@
+<div class="container">
+	<form class="form-horizontal" method="get">
+		<input type="hidden" name="action" value="generator" />
+		<legend>Key Generator</legend>
+		<div class="control-group">
+			<div class="controls">
+				<button type="submit" class="btn">Generate!</button>
+				<a href="<?=$href_self?>/generator" class="btn">Init:)</a>
+			</div>
+		</div>
+	</form>
+	<form class="form-horizontal" method="post">
+		<legend>Password Encrypt</legend>
+		<input type="hidden" name="action" value="password" />
+		<div class="control-group">
+			<label class="control-label">Key 64</label>
+			<div class="controls">
+				<textarea name="key64" rows="3"><?=@$key64?></textarea>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">Key 256</label>
+			<div class="controls">
+				<textarea name="key256" rows="3"><?=@$key256?></textarea>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">Key 512</label>
+			<div class="controls">
+				<textarea name="key512" rows="3"><?=@$key512?></textarea>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">Salt</label>
+			<div class="controls">
+				<input type="text" name="salt" value="<?=@$salt?>" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">Password</label>
+			<div class="controls">
+				<input type="password" name="password" />
+			</div>
+		</div>
+		<div class="control-group">
+			<div class="controls">
+				<button type="submit" class="btn">Change To Password</button>
+			</div>
+		</div>
+<?php if (isset($password_result)) : ?>
+		<div class="control-group">
+			<label class="control-label">Result!</label>
+			<div class="controls">
+				<?=$password_result?>
+			</div>
+		</div>
+<?php endif;?>
+	</form>
+</div>

@@ -1,0 +1,96 @@
+<section class="container new">
+
+	<form class="form-horizontal" method="post" enctype="multipart/form-data">
+		
+		<input type="hidden" name="action" value="<?php echo $action?>" />
+		<input type="hidden" name="idx" value="<?php echo @$result['idx'];?>" />
+		<input type="hidden" name="thumbnail" value="<?php echo @htmlspecialchars($result['thumbnail']);?>" />
+
+		<div class="control-group">
+			<label class="control-label" for="writer">Writer</label>
+			<div class="controls">
+				<input type="text" name="writer" id="writer" class="span3" value="<?php echo @htmlspecialchars($result['writer'])?>" readonly />
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="select_category">Category</label>
+			<div class="controls">
+				<select name="category_idx" id="select_category" class="span3">
+					<option selected>--선택--</option>
+<?php foreach ($category as $v) : ?>
+					<option value="<?php echo $v['idx']?>"<?php echo (isset($result['category_idx']) && $v['idx'] == $result['category_idx'])?" selected":""?>><?php echo $v['name']?></option>
+<?php endforeach; ?>
+				</select>
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="thumbnail">Thumbnail</label>
+			<div class="controls">
+<?php
+if ( isset($result['thumbnail']) && is_file(__ROOT__.'/files/'.urldecode($result['thumbnail']))) {
+?>
+				<div class="thumbnail-preview"><img src="<?php echo HOME?>/files/<?php echo @urlencode($result['thumbnail']);?>" alt="Thumbnail" /></div>
+				<div class="text"><input type="checkbox" name="delete_thumbnail" value="1" /> Delete Thumbnail</div>
+<?php
+}
+?>
+				<div class="btn wdu-input-file">
+					<i class="icon-file"></i>
+					<span>Select File..</span>
+					<input type="file" name="thumbnail" id="thumbnail" />
+				</div>
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="subject">Subject</label>
+			<div class="controls">
+				<input type="text" name="subject" id="subject" class="span6" required value="<?php echo @htmlspecialchars($result['subject'])?>" />
+			</div>
+		</div>
+
+		<div class="control-group">
+			<div class="control-markdown">
+
+				<input type="hidden" name="contents" class="mdeditor-contents" value="<?php echo @htmlspecialchars($result['contents']);?>" />
+<?php foreach($result['files'] as $v) : ?>
+				<input type="hidden" name="files[]" class="mdeditor-files" value="<?php echo $v;?>" />
+<?php endforeach; ?>
+				<textarea name="markdown" class="mdeditor-textarea" data-baseurl="<?php echo HOME?>/files" data-action="<?php echo $href?>/<?php echo $id?>/upload" id="mdeditor"><?php echo @htmlspecialchars($result['markdown'])?></textarea>
+			</div>
+		</div>
+
+		<div class="control-group">
+			<div class="controls pull-right">
+<?php if( $action == "new") : ?>
+				<button type="submit" name="submit" id="submit" class="btn btn-warning">Write</button>
+<?php else: ?>
+				<button type="submit" name="submit" id="submit" class="btn btn-warning">Modify</button>
+				<a data-toggle="modal" href="#confirmDelete" class="btn btn">Delete</a>
+<?php endif; ?>
+			</div>
+		</div>
+
+	</form>
+
+
+	<form class="form-horizontal" method="post">
+		<input type="hidden" name="action" value="delete" />
+		<input type="hidden" name="idx" value="<?php echo @$result['idx'];?>" />
+		
+		<div id="confirmDelete" class="modal hide fade">
+			<div class="modal-header">
+				<button type="button" data-dismiss="modal" class="close">&times;</button>
+				<h4>정말로 삭제합니까?</h4>
+			</div>
+			<div class="modal-body"><p>한번 삭제하면 다시는 돌이킬 수 없습니다.</p></div>
+			<div class="modal-footer">
+				<a href="#" data-dismiss="modal" class="btn">닫기</a>
+				<button type="submit" class="btn btn-warning">삭제</button>
+			</div>
+		</div>
+	</form>
+
+</section>

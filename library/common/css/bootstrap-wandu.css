@@ -1,0 +1,59 @@
+
+/* Override Bootstrap */
+
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+body{font-family:'Nanum Gothic', sans-serif;font-size:12px;}
+input,button,select,textarea {font-family:'Nanum Gothic', sans-serif;}
+.navbar-search .search-query{font-family:'Nanum Gothic', sans-serif;}
+
+select,textarea,input[type="text"],input[type="password"],input[type="datetime"],input[type="datetime-local"],
+input[type="date"],input[type="month"],input[type="time"],input[type="week"],input[type="number"],input[type="email"],
+input[type="url"],input[type="search"],input[type="tel"],input[type="color"],.uneditable-input {height:16px;font-size:12px;line-height:16px;}
+label, input, button, select, textarea {font-size:12px;line-height:16px;}
+select, input[type="file"] {height:26px;line-height:26px;}
+textarea {height:auto;}
+.btn {font-size:12px;line-height:16px;}
+.btn-group>.btn, .btn-group>.dropdown-menu, .btn-group>.popover {font-size: 12px;}
+a {color:inherit;}
+
+/* Origin Added */
+
+.control-group > .control-fullsize {width:100%;}
+.control-group > .control-fullsize > textarea {box-sizing:border-box;width:100%;}
+
+.vertical-middle {display:table;height:100%;}
+.vertical-middle > .vertical-middle-contents {display:table-cell;vertical-align:middle;}
+
+.align-right {text-align:right;}
+
+nav.navbar a.wandu {font-weight:bold;color:#fb9e25;text-shadow:0 1px 0 #333, 0 0 30px #444;
+-webkit-transition:color .1s linear;}
+nav.navbar a.wandu:hover {color:#fff;}
+
+.gap {margin-bottom:20px;}
+
+footer {padding-bottom:50px;}
+
+[data-href] {cursor:pointer;}
+
+ul.wdu-aside > li.active > a,
+ul.wdu-aside > li.active > a:hover {background-color:#e78e1b;color:#fff;cursor:pointer;}
+
+.wdu-input-file {position:relative;white-space:nowrap;}
+.wdu-input-file > input {position:absolute;top:0;right:0;margin:0;opacity:0;filter:alpha(opacity=0);width:100%;}
+
+/* table */
+.table {border-top:3px solid #ddd;}
+.table th,
+.table th:hover {background:#eee;text-align:center;}
+.table td,
+.table td:hover {text-align:center;}
+.table th.align-left,
+.table td.align-left {text-align:left;}
+.table th.align-right,
+.table td.align-right {text-align:right;}
+
+.table tr.blank >td {text-align:center;border-bottom:1px solid #ddd;}
+
+.radio.inline, .checkbox.inline {white-space:nowrap;}

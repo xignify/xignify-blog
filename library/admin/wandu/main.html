@@ -1,0 +1,11 @@
+<section class="container">
+	<div class="kongs">
+<?php foreach( $kongs as $kong ) : ?>
+		<div class="kong">
+			<a href="<?php echo $kong['href']?>"><img src="<?php echo $kong['icon']?>" alt="<?php echo $kong['name']?>" /></a>
+			<div class="name"><?php echo $kong['name']?></div>
+		</div>
+<?php endforeach; ?>
+	</div>
+	
+</section>

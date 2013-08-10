@@ -1,0 +1,24 @@
+/*
+ * Grid Less
+ */
+
+.wrap {
+	.use-grid {margin-left:-10px;margin-right:-10px;}
+}
+
+.use-grid {
+	margin-left:auto;margin-right:auto;width:1020px;
+	> * {margin-left:10px;margin-right:10px;float:left;}
+	&:after { .clear; }
+
+	.makeGrid( @index ) when (@index > 0) {
+		.grid@{index} { width:((85px*@index)-20); }
+		.makeGrid(@index - 1);
+	}
+	.makeGap( @index ) when (@index > 0) {
+		.gap@{index} { margin-left:(85px*@index); }
+		.makeGap(@index - 1)
+	}
+	.makeGrid(12);
+	.makeGap(12);
+}
