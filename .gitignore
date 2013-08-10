@@ -4,7 +4,8 @@ CHECKLIST
 /vendor
 /components
 /.htaccess
-/config
+/config/xignify-admin-init.php
+/config/xignify-pdo.php
 /Kongs
 /files
 

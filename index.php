@@ -7,8 +7,8 @@ define("__ROOT__", __DIR__);
 define("HOME",  substr($_SERVER['PHP_SELF'], 0, strpos($_SERVER['PHP_SELF'], "/index.php")));
 
 // get args
-$args = isset( $_SERVER['PATH_INFO'] ) ? explode( "/", trim($_SERVER['PATH_INFO'], "/") ) : array();
-args_init( $args, "blog" );
+$args = ( isset( $_SERVER['PATH_INFO'] ) && $_SERVER['PATH_INFO'] !== "/" ) ?
+		explode( "/", trim($_SERVER['PATH_INFO'], "/") ) : args_init( $args, "blog" );
 
 switch( $args[0] ) {
 	case "blog" :
