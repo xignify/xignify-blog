@@ -29,35 +29,6 @@ class Loader extends Controller {
 			$origin_file = $this->basepath . $this->args[0];
 			$layer = ImageWorkshop::initFromPath( $origin_file );
 
-			$exif = @exif_read_data($origin_file);
-			if ( isset($exif) && isset($exif['Orientation']) ) {
-				switch($exif['Orientation']) {
-					case 2 :
-						$layer->flip("horizontal");
-						break;
-					case 3 :
-						$layer->rotate(180);
-						break;
-					case 4 :
-						//$layer->rotate(180);
-						$layer->flip("vertical");
-						break;
-					case 5 :
-						$layer->rotate(90);
-						$layer->flip("horizontal");
-						break;
-					case 6 : 
-						$layer->rotate(90);
-						break;
-					case 7 :
-						$layer->rotate(-90);
-						$layer->flip("horizontal");
-						break;
-					case 8 :
-						$layer->rotate(-90);
-						break;
-				}
-			}
 			if ( $width !== 0 ) {
 				$layer->resizeInPixel($width, null, true);
 			}
