@@ -48,7 +48,8 @@ class View_Init {
 			"js_files" => View::js(
 				"components/modernizr/modernizr.js",
 				"components/jquery/jquery.min.js",
-				"components/bootstrap/js/bootstrap.min.js"
+				"components/bootstrap/js/bootstrap.min.js",
+				"library/admin/init/js/jquery.wandu.js"
 			). ( isset($values['js_files']) ? "\r\n".View::js( $values['js_files']) : "" )
 		));
 	}

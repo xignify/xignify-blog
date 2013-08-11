@@ -77,6 +77,7 @@
 				$( '#file-progress > div.bar' ).css({'width' : percentComplete + "%"});
 			},
 			success : function(response, statusText, xhr, $form) {
+//				console.log(response);
 				for (var i = 0; i < response.data.length; i++ ) {
 					$( 'div.mdeditor-files-list' ).prepend( 
 						$('<a/>').html( response.data[i] ).attr({'data-url' : response.url[i]})

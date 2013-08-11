@@ -5,6 +5,8 @@ use \Xignify\Model;
 use \Xignify\View;
 use \Xignify\Controller;
 
+use \Xignify\Module\Input;
+
 class Controller_Blog extends Controller {
 
 	public function __init() {
@@ -29,10 +31,10 @@ class Controller_Blog extends Controller {
 				$variables = $this->model->blogNew();
 				$this->view->blogNew( $variables );
 				break;
-			case "test" :
-				$this->model->imageResize();
-				break;
 			default :
+				$variables = $this->model->blogView( $this->args[0] );
+				$this->view->blogNew( $variables );
+				
 		}
 
 
@@ -47,9 +49,18 @@ class Controller_Blog extends Controller {
 				$variables = $this->model->imageUpload();
 				break;
 			case "new" : 
-				$variables = $this->model->blogNew();
-				$this->view->blogNew( $variables );
-				
+				$this->model->blogNewProcess();
+				go( HOME ."/admin/blog" );
+				break;
+			default :
+				if ( Input::post("action") == "modify" ) {
+					$this->model->blogModifyProcess();
+					go( $_SERVER['REQUEST_URI'] );
+				}
+				else if ( Input::post("action") == "delete" ) {
+					$this->model->blogDeleteProcess();
+					go( HOME ."/admin/blog" );
+				}
 		}
 
 

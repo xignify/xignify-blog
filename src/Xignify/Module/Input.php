@@ -1,5 +1,5 @@
 <?php
-namespace Xignify;
+namespace Xignify\Module;
 
 class Input {
 

@@ -1,0 +1,63 @@
+
+<div id="background">
+	<img src="<?php echo HOME?>/library/blog/images/background.png" alt="" />
+</div>
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+			<a class="brand" href=".">Xignify Blog</a>
+			<ul class="nav pull-right">
+				<li><a href="http://www.xignify.com">Homepage</a></li>
+			</ul>
+		</div>
+	</div>
+
+</nav>
+
+
+<section>
+	<div class="container">
+		<div class="row" id="blog_items" data-ajax="<?php echo HOME?>/view/">
+
+
+<?php foreach ($rows as $row) : ?>
+			<div class="item span4" data-idx="<?php echo $row['idx']?>">
+				<div class="inner">
+					<h2><?php echo $row['subject']?></h2>
+<?php
+if (isset($row['thumbnail'])) :
+	$url = HOME ."/image/".$row['thumbnail'] ."?width=350&forced=true";
+	$imagepath = pathinfo(__ROOT__."/files/".$row['thumbnail']);
+	list($w, $h) = getimagesize(__ROOT__."/files/__cache/".$imagepath['filename']."_w350.".$imagepath['extension']);
+?>
+
+					<div class="thumbnail-preview" style="width:350px;height:<?php echo $h*350/$w?>px">
+						<img src="<?php echo $url?>" alt="<?php echo $row['subject']?>" />
+					</div>
+<?php endif; ?>
+					<div class="contents"><?php echo $row['summary']?></div>
+				</div>
+			</div>
+<?php endforeach; ?>
+
+			
+		</div>		
+	</div>
+</section>
+
+<div id="navi">
+	<a href="<?php echo HOME?>/?page=<?php echo ($page +1)?>">Next</a>
+</div>
+
+<div class="simple-modal" id="itemModal">
+	<a class="close" href="#!"><i class="icon-remove"></i></a>
+	<div class="subject"></div>
+	<div class="main"></div>
+	<div class="date">aa</div>
+	<div class="controller">
+		<a class="prev">Prev</a>
+		<a class="next">Next</a>
+	</div>
+</div>

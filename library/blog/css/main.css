@@ -1,0 +1,85 @@
+@import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
+
+/* Bootstrap Override */
+
+h1 {font-size:25px;}
+h2 {font-size:22px;}
+h3 {font-size:19px;}
+h1,h2,h3 {line-height:32px;}
+h4 {font-size:16px;}
+h5 {font-size:14px;}
+h6 {font-size:12px;}
+
+code {word-break:break-all;white-space:normal;}
+
+body{font-family:'Nanum Gothic', sans-serif;font-size:12px;line-height:20px;}
+input,button,select,textarea {font-family:'Nanum Gothic', sans-serif;}
+.navbar-search .search-query{font-family:'Nanum Gothic', sans-serif;}
+
+select,textarea,input[type="text"],input[type="password"],input[type="datetime"],input[type="datetime-local"],
+input[type="date"],input[type="month"],input[type="time"],input[type="week"],input[type="number"],input[type="email"],
+input[type="url"],input[type="search"],input[type="tel"],input[type="color"],.uneditable-input {height:16px;font-size:12px;line-height:16px;}
+label, input, button, select, textarea {font-size:12px;line-height:16px;}
+select, input[type="file"] {height:26px;line-height:26px;}
+
+.btn {font-size:12px;line-height:16px;}
+.btn-group>.btn, .btn-group>.dropdown-menu, .btn-group>.popover {font-size: 12px;}
+a {color:inherit;}
+
+
+/* Origin Css */
+
+#background {position:fixed;top:-50%;left:-50%;width:200%;height:200%;z-index:-1;}
+#background > img {position:absolute;top:0;left:0;right:0;bottom:0;margin:auto;min-width:50%;min-height:50%;}
+
+a {cursor:pointer;}
+section {margin-top:60px;}
+
+div.item {background-image: url("../images/bg-white-70.png");border-radius:10px;margin-bottom:20px;cursor:pointer;}
+div.item > div.inner {padding:10px;}
+
+div.item > div.inner > h2 {font-size:16px;line-height:20px;color:#333;font-weight:normal;}
+div.item > div.inner > .thumbnail {border:0;padding:10px;margin:0;}
+/*div.item > div.inner > .contents {font-size:12px;}
+*/
+.simple-modal-blind {position:fixed;top:0;left:0;width:100%;height:100%;background:url("../images/blind.png");z-index:99;}
+
+.simple-modal {
+	position:absolute;z-index:100;display:none;
+	left:50%;top:15%;margin-left:-384px;
+	width:768px;
+}
+.simple-modal > a.close {display:block;position:absolute;width:30px;height:30px;text-align:center;right:0;top:-30px}
+.simple-modal > a.close > i {font-size:25px;line-height:30px;}
+
+.simple-modal > .subject {width:728px;height:35px;line-height:35px;background:#fff;padding:20px;font-size:30px;}
+.simple-modal > .main {width:728px;background:#fff;padding:20px;}
+.simple-modal > .date {width:768px;text-align:right;font-size:20px;line-height:30px;color:#fff;}
+.simple-modal > .controller {display:none;}
+@media (min-width: 980px) {
+
+}
+@media (min-width: 768px) and (max-width: 979px) {
+
+}
+@media (min-width: 480px) and (max-width: 767px) {
+	section {margin-top:0;}
+	.simple-modal {
+		width:100%;
+		margin:0;left:0;
+	}
+	.simple-modal > .subject {width:auto;height:auto;}
+	.simple-modal > .main {width:auto;height:auto;overflow:scroll;}
+	.simple-modal > .date {width:auto;text-align:right;}
+}
+@media (max-width: 480px) {
+	section {margin-top:0;}
+	.simple-modal {
+		width:100%;
+		margin:0;left:0;
+	}
+	.simple-modal > .subject {width:auto;height:auto;}
+	.simple-modal > .main {width:auto;height:auto;overflow:scroll;}
+	.simple-modal > .date {width:auto;text-align:right;}
+
+}

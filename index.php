@@ -6,13 +6,20 @@ $loader = require "vendor/autoload.php";
 define("__ROOT__", __DIR__);
 define("HOME",  substr($_SERVER['PHP_SELF'], 0, strpos($_SERVER['PHP_SELF'], "/index.php")));
 
-// get args
-$args = ( isset( $_SERVER['PATH_INFO'] ) && $_SERVER['PATH_INFO'] !== "/" ) ?
-		explode( "/", trim($_SERVER['PATH_INFO'], "/") ) : args_init( $args, "blog" );
+if ( isset( $_SERVER['PATH_INFO'] ) && $_SERVER['PATH_INFO'] !== "/" ) {
+	$temp = explode("?", $_SERVER['PATH_INFO']);
+	$args = explode( "/", trim($temp[0], "/") );
+}
+else {
+	$args = array( "." );
+}
 
 switch( $args[0] ) {
-	case "blog" :
+	case "." :
 		$fa = Controller::factory("Xignify\\Blog\\Controller_Init");
+		break;
+	case "view" :
+		$fa = Controller::factory("Xignify\\Blog\\Controller_View");
 		break;
 	case "admin" :
 		$fa = Controller::factory("Xignify\\Admin\\Controller_Init");
