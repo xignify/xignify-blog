@@ -30,7 +30,7 @@
 if (isset($row['thumbnail'])) :
 	$url = HOME ."/image/".$row['thumbnail'] ."?width=350&forced=true";
 	$imagepath = pathinfo(__ROOT__."/files/".$row['thumbnail']);
-	list($w, $h) = getimagesize(__ROOT__."/files/__cache/".$imagepath['filename']."_w350.".$imagepath['extension']);
+	list($w, $h) = getimagesize(__ROOT__."/files/".$row['thumbnail']);
 ?>
 
 					<div class="thumbnail-preview" style="width:350px;height:<?php echo $h*350/$w?>px">
