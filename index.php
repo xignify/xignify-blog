@@ -9,6 +9,7 @@ define("HOME",  substr($_SERVER['PHP_SELF'], 0, strpos($_SERVER['PHP_SELF'], "/i
 if ( isset( $_SERVER['PATH_INFO'] ) && $_SERVER['PATH_INFO'] !== "/" ) {
 	$temp = explode("?", $_SERVER['PATH_INFO']);
 	$args = explode( "/", trim($temp[0], "/") );
+	if ( $args[0] == "" ) $args[0] = ".";
 }
 else {
 	$args = array( "." );
