@@ -225,39 +225,46 @@ class Model_Blog {
 		
 		$ret['url'] = $this->file->getUrl('fileupload');
 		$ret['data'] = $this->file->getData('fileupload');
-		$file = __ROOT__."/files/".$ret['data'][0];
+		
+		
+		foreach( $ret['data'] as $image ) {
 
-		if ( file_exists( $file ) && is_file( $file ) ) {
-			$exif = @exif_read_data( $file );
-			if ( isset($exif) && isset($exif['Orientation']) ) {
-				$layer = ImageWorkshop::initFromPath( $file );
-				switch($exif['Orientation']) {
-					case 2 :
-						$layer->flip("horizontal");
-						break;
-					case 3 :
-						$layer->rotate(180);
-						break;
-					case 4 :
-						$layer->flip("vertical");
-						break;
-					case 5 :
-						$layer->rotate(90);
-						$layer->flip("horizontal");
-						break;
-					case 6 : 
-						$layer->rotate(90);
-						break;
-					case 7 :
-						$layer->rotate(-90);
-						$layer->flip("horizontal");
-						break;
-					case 8 :
-						$layer->rotate(-90);
-						break;
+			$file = __ROOT__."/files/".$image;
+
+			if ( file_exists( $file ) && is_file( $file ) ) {
+				$exif = @exif_read_data( $file );
+				if ( isset($exif) && isset($exif['Orientation']) ) {
+					$layer = ImageWorkshop::initFromPath( $file );
+					switch($exif['Orientation']) {
+						case 2 :
+							$layer->flip("horizontal");
+							break;
+						case 3 :
+							$layer->rotate(180);
+							break;
+						case 4 :
+							$layer->flip("vertical");
+							break;
+						case 5 :
+							$layer->rotate(90);
+							$layer->flip("horizontal");
+							break;
+						case 6 : 
+							$layer->rotate(90);
+							break;
+						case 7 :
+							$layer->rotate(-90);
+							$layer->flip("horizontal");
+							break;
+						case 8 :
+							$layer->rotate(-90);
+							break;
+					}
+					$layer->save( __ROOT__."/files/", $image, true, null, 100);
 				}
-				$layer->save( __ROOT__."/files/", $ret['data'][0], true, null, 100);
 			}
+
+			
 		}
 		ob_clean();
 		\Xignify\View::header("ajax");

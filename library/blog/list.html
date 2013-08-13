@@ -28,12 +28,12 @@
 					<h2><?php echo $row['subject']?></h2>
 <?php
 if (isset($row['thumbnail'])) :
-	$url = HOME ."/image/".$row['thumbnail'] ."?width=350&forced=true";
+	$url = HOME ."/image/".$row['thumbnail'] ."?width=350";
 	$imagepath = pathinfo(__ROOT__."/files/".$row['thumbnail']);
 	list($w, $h) = getimagesize(__ROOT__."/files/".$row['thumbnail']);
 ?>
 
-					<div class="thumbnail-preview" style="width:350px;height:<?php echo $h*350/$w?>px">
+					<div class="thumbnail-preview" data-height="<?php echo $h*100/$w?>">
 						<img src="<?php echo $url?>" alt="<?php echo $row['subject']?>" />
 					</div>
 <?php endif; ?>
@@ -48,7 +48,7 @@ if (isset($row['thumbnail'])) :
 </section>
 
 <div id="navi">
-	<a href="<?php echo HOME?>/?page=<?php echo ($page +1)?>">Next</a>
+	<a href="<?php echo HOME?>/?page=<?php echo ($page +1)?>">.</a>
 </div>
 
 <div class="simple-modal" id="itemModal">

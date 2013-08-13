@@ -8,4 +8,4 @@ CHECKLIST
 /config/xignify-pdo.php
 /Kongs
 /files
-
+*.backup
