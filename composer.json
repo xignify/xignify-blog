@@ -1,6 +1,7 @@
 {
     "require": {
         "php" : ">=5.3.2",
+        "xignify/xignify" : "0.1.1",
         "components/jquery" : "1.10.*",
         "components/bootstrap" : "2.3.*",
         "components/font-awesome" : "3.2.*",
@@ -14,9 +15,6 @@
 	"autoload" : {
 		"psr-0" : {
 			"Xignify\\" : "src/"
-		},
-		"files" : [
-			"src/functions.php"
-		]
+		}
 	}
 }

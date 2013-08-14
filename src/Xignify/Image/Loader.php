@@ -27,7 +27,8 @@ class Loader extends Controller {
 		$cache_file_path = $this->cachepath . $cache_file;
 		if ( !file_exists( $cache_file_path ) || $forced === "true" ) {
 			$origin_file = $this->basepath . $this->args[0];
-			$layer = ImageWorkshop::initFromPath( $origin_file );
+			//echo urldecode($origin_file);
+			$layer = ImageWorkshop::initFromPath( urldecode($origin_file) );
 
 			if ( $width !== 0 ) {
 				$layer->resizeInPixel($width, null, true);
