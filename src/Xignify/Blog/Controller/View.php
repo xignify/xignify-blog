@@ -44,6 +44,7 @@ class Controller_View extends Controller {
 		$stmt = $this->db->prepare("select * from `{@prefix}blog_data` where `idx`= ? limit 0, 1");
 		$stmt->execute(array($idx));
 		$ret["result"] = $stmt->fetch();
+		$ret["result"]["reg_date"] = date("Y.m.d", $ret["result"]["reg_date"]);
 
 		View::header("json");
 		echo json_encode($ret);

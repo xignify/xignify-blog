@@ -2,6 +2,9 @@
 
 /* Bootstrap Override */
 
+blockquote {border-left:3px solid #bbb;padding:0 0 0 9px;}
+blockquote p {font-size:13px;}
+
 h1 {font-size:25px;}
 h2 {font-size:22px;}
 h3 {font-size:19px;}
@@ -11,8 +14,9 @@ h5 {font-size:14px;}
 h6 {font-size:12px;}
 
 code {word-break:break-all;white-space:normal;}
+a {word-break:break-all;white-space:normal;}
 
-body{font-family:'Nanum Gothic', sans-serif;font-size:12px;line-height:20px;}
+body{font-family:'Nanum Gothic', sans-serif;font-size:12px;line-height:20px;background:#eee;}
 input,button,select,textarea {font-family:'Nanum Gothic', sans-serif;}
 .navbar-search .search-query{font-family:'Nanum Gothic', sans-serif;}
 
@@ -29,20 +33,29 @@ a {color:inherit;}
 
 /* Origin Css */
 
-#background {position:fixed;top:-50%;left:-50%;width:200%;height:200%;z-index:-1;}
-#background > img {position:absolute;top:0;left:0;right:0;bottom:0;margin:auto;min-width:50%;min-height:50%;}
-
 a {cursor:pointer;}
 section {margin-top:60px;}
 
-div.item {background-image: url("../images/bg-white-70.png");border-radius:10px;margin-bottom:20px;cursor:pointer;}
+div.item {background:#fff;border-radius:10px;margin-bottom:20px;cursor:pointer;box-shadow:2px 2px 8px rgba(0,0,0,.2)}
 div.item > div.inner {padding:10px;}
 
-div.item > div.inner > h2 {font-size:16px;line-height:20px;color:#333;font-weight:normal;}
-div.item > div.inner > .thumbnail {border:0;padding:10px;margin:0;}
+div.item > div.inner > h2 {font-size:18px;line-height:20px;color:#555;font-weight:bold;border-bottom:1px solid #ddd;padding-bottom:7px;}
+div.item > div.inner > h2 > small {float:right;display:block;font-size:12px;padding-top:7px;}
+div.item > div.inner > h2:after {clear:both;display:table;content:"";}
+div.item > div.inner > .thumbnail-preview {margin-bottom:10px;}
 div.item > div.inner > .thumbnail-preview > img {width:100%;}
-/*div.item > div.inner > .contents {font-size:12px;}
-*/
+
+div.item > div.inner > div.contents h1 {font-size:16px;color:#666666;}
+div.item > div.inner > div.contents h2 {font-size:15px;color:#686868;}
+div.item > div.inner > div.contents h3 {font-size:14px;color:#6a6a6a;}
+div.item > div.inner > div.contents h4 {font-size:13px;color:#6c6c6c;}
+div.item > div.inner > div.contents h5 {font-size:13px;color:#6e6e6e;}
+div.item > div.inner > div.contents h6 {font-size:13px;color:#707070;}
+
+
+
+/* Modal */
+
 .simple-modal-blind {position:fixed;top:0;left:0;width:100%;height:100%;background:url("../images/blind.png");z-index:99;}
 
 .simple-modal {
@@ -61,7 +74,7 @@ div.item > div.inner > .thumbnail-preview > img {width:100%;}
 
 }
 @media (min-width: 768px) and (max-width: 979px) {
-
+	section {margin-top:0;}
 }
 @media (min-width: 480px) and (max-width: 767px) {
 	section {margin-top:0;}

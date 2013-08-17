@@ -22,7 +22,17 @@ class Controller_Init extends Controller {
 
 		$page = \Xignify\Module\Input::get("page", 1);
 
-		$stmt = $this->db->prepare("select `idx`, `subject`, `markdown`, `contents`, `reg_date` from {@prefix}blog_data order by `idx` desc limit ".( ($page -1)*10 ) .", 10");
+		$stmt = $this->db->prepare("
+			select
+				`{@prefix}blog_data`.`idx` as `idx`, 
+				`{@prefix}blog_data`.`subject` as `subject`, 
+				`{@prefix}blog_category`.`name` as `category`,
+				`{@prefix}blog_data`.`writer` as `writer`,
+				`{@prefix}blog_data`.`markdown` as `markdown`,
+				`{@prefix}blog_data`.`contents` as `contents`
+			from `{@prefix}blog_data` left outer join `{@prefix}blog_category`
+			on `{@prefix}blog_data`.`category_idx` = `{@prefix}blog_category`.`idx`
+			order by `idx` desc limit ".( ($page -1)*10 ) .", 10");
 		$stmt->execute();
 		$rows = $stmt->fetchAll();
 

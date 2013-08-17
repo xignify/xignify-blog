@@ -5,6 +5,8 @@ define("__ROOT__", __DIR__);
 
 $loader = require "vendor/autoload.php";
 
+date_default_timezone_set("Asia/Seoul");
+
 switch( $args[0] ) {
 	case "." :
 		$fa = Controller::factory("Xignify\\Blog\\Controller_Init");

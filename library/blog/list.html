@@ -1,8 +1,4 @@
 
-<div id="background">
-	<img src="<?php echo HOME?>/library/blog/images/background.png" alt="" />
-</div>
-
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
 	<div class="navbar-inner">
@@ -25,7 +21,10 @@
 <?php foreach ($rows as $row) : ?>
 			<div class="item span4" data-idx="<?php echo $row['idx']?>">
 				<div class="inner">
-					<h2><?php echo $row['subject']?></h2>
+					<h2>
+						<?php echo $row['subject']?>
+						<small><?php echo $row['category']?> by <?php echo $row['writer']?></small>
+					</h2>
 <?php
 if (isset($row['thumbnail'])) :
 	$url = HOME ."/image/".$row['thumbnail'] ."?width=350";
