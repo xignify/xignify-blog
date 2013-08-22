@@ -1,3 +1,6 @@
 [submodule "submodule/markdown-js"]
 	path = submodule/markdown-js
 	url = https://github.com/evilstreak/markdown-js.git
+[submodule "submodule/jquery-wgrid"]
+	path = submodule/jquery-wgrid
+	url = https://github.com/wan2land/jquery-wgrid

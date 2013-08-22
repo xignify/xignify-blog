@@ -15,11 +15,9 @@
 
 <section>
 	<div class="container">
-		<div class="row" id="blog_items" data-ajax="<?php echo HOME?>/view/">
-
-
+		<div class="items" id="blog_items" data-ajax="<?php echo HOME?>/view/">
 <?php foreach ($rows as $row) : ?>
-			<div class="item span4" data-idx="<?php echo $row['idx']?>">
+			<div class="item" data-idx="<?php echo $row['idx']?>">
 				<div class="inner">
 					<h2>
 						<?php echo $row['subject']?>

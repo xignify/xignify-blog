@@ -6,6 +6,7 @@ CHECKLIST
 /.htaccess
 /config/xignify-admin-init.php
 /config/xignify-pdo.php
+/config/xignify-blog-analytics.php
 /Kongs
 /files
 *.backup

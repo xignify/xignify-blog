@@ -38,7 +38,7 @@
 	hashAction();
 	$(window).bind("hashchange", hashAction);
 	
-	blog_list.masonry();
+	blog_list.wgrid();
 
 	blog_list.infinitescroll({
 		navSelector : "#navi",
@@ -52,8 +52,7 @@
 	},
 	function( newElements ) {
 		resizing();
-		var $newElems = $( newElements );
-		blog_list.masonry('appended', $newElems);
+		blog_list.wgrid( "append", newElements );
 	});
 /*
 	$(window).scroll(function() {
@@ -72,3 +71,4 @@
 */
 //	prettyPrint();
 })(jQuery);
+

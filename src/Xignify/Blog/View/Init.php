@@ -16,7 +16,9 @@ class View_Init {
 				"library/blog/css/main.css"
 			)
 		));
-		View::html("library/blog/list", $variables );
+		View::html("template/blog/main", $variables );
+		
+		echo \Xignify\Config::fromPhp("xignify-blog-analytics");
 		View::html("library/common/footer", array(
 			"js_files" => View::js(
 				"components/modernizr/modernizr.js",
@@ -24,7 +26,7 @@ class View_Init {
 				"library/blog/js/jquery.wanimodal.js",
 				"library/blog/js/jquery.easing.min.js",
 				"library/blog/js/jquery.hashanalyzer.js",
-				"library/blog/js/jquery.masonry.min.js",
+				"submodule/jquery-wgrid/jquery.wgrid.js",
 				"library/blog/js/jquery.infinitescroll.min.js",
 				"library/blog/js/blog-main.js"
 			)
