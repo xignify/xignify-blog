@@ -45,7 +45,7 @@
 		nextSelector : "#navi > a",
 		itemSelector : "#blog_items div.item",
 		loading : {
-			finishedMsg : "No more page to load.",
+			finishedMsg : "",
 			img : 'http://i.imgur.com/qkKy8.gif'
 		},
 		bufferPx : 100

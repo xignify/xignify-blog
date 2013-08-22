@@ -2,6 +2,8 @@
 
 /* Bootstrap Override */
 
+.navbar .brand {color:#000;width:183px;height:16px;background:url("../images/logo-blog.png") no-repeat 22px 12px;overflow:hidden;text-indent:-999px;}
+
 blockquote {border-left:3px solid #bbb;padding:0 0 0 9px;}
 blockquote p {font-size:13px;}
 
