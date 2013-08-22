@@ -8,7 +8,7 @@ class View_Init {
 
 	public function main( $variables ) {
 		View::html("library/common/header", array(
-			"title" => "Wandu Administrator",
+			"title" => "BLOG XIGNIFY",
 			"css_files" => View::css(
 				"components/bootstrap/css/bootstrap.min.css",
 				"components/bootstrap/css/bootstrap-responsive.min.css",
